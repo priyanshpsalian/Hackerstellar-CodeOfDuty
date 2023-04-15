@@ -57,14 +57,14 @@ exports.helloWorld = functions.https.onRequest(async (request, response) => {
 
     const stocksToBuy = gptCompletion.data.choices[0].text.match(/\b[A-Z]+\b/g);
     console.log(`Thanks for the tips Jim! ${stocksToBuy}`);
-
+    response.send(stocksToBuy);
     if (!stocksToBuy) {
       console.log("sitting this one out");
       return null;
     }
-    console.log("alpaca login init");
   } catch (e) {
     console.log(e,"first error");
+    response.send("error");
     
   }
   
@@ -95,9 +95,35 @@ exports.helloWorld = functions.https.onRequest(async (request, response) => {
 
   // return null;
 
-  response.send('test');
+  
 });
+exports.Buy = functions.https.onRequest(async (request, response) => {
+  // test logic here
+  
+  try {
+    const account = await alpaca.getAccount();
+    // console.log(`dry powder: ${account.buying_power}`);
+    // console.log("account init done");
+    // // place order
+    // const order = await alpaca.createOrder({
+    //   // symbol: stocksToBuy[0],
+    //   symbol: "AMD",
+    //   qty: 1,
+    //   // notional: account.buying_power * 0.9, // will buy fractional shares
+    //   side: "buy",
+    //   type: "market",
+    //   time_in_force: "day",
+    // });
+    
+    console.log(`look mom i bought stonks: ${order.id}`);
 
+  } catch (e) {
+    console.log(e,"error");
+
+  }
+
+  return null;
+});
 exports.getRichQuick = functions
   .runWith({ memory: '4GB' })
   .pubsub.schedule('0 10 * * 1-5')

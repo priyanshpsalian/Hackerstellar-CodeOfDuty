@@ -6,6 +6,8 @@ const {
   MessageMedia,
 } = require("whatsapp-web.js");
 const request = require("request");
+const axios = require("axios");
+
 // const client = new Client();
 const qrcode = require("qrcode-terminal");
 // Path where the session data will be stored
@@ -15,13 +17,46 @@ const SESSION_FILE_PATH = "./session.json";
 //   "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/800px-Image_created_with_a_mobile_phone.png"
 // );
 // console.log(media,"media");
+const { Configuration, OpenAIApi } = require("openai");
+const configuration = new Configuration({
+  organization: "org-FePBbKs7Fw8eiYd79riEu7Fz", // REPLACE with your API credentials
+  apiKey: "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", // REPLACE with your API credentials
+});
+const openai = new OpenAIApi(configuration);
 
+const Alpaca = require("@alpacahq/alpaca-trade-api");
+const alpaca = new Alpaca({
+  keyId: "26669da693b8c5dc3a5be2476ad313f0", // REPLACE with your API credentials
+  secretKey: "8ac1f3af800e9c7c965d286ec1a81685d78b9813", // REPLACE with your API credentials
+  // paper: true,
+});
 // Load the session data if it has been previously saved
 let sessionData;
 if (fs.existsSync(SESSION_FILE_PATH)) {
   sessionData = require(SESSION_FILE_PATH);
 }
+const puppeteer = require("puppeteer");
 
+async function scrape() {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+
+  await page.goto("https://twitter.com/jimcramer", {
+    waitUntil: "networkidle2",
+  });
+
+  await page.waitForTimeout(3000);
+
+  // await page.screenshot({ path: 'example.png' });
+
+  const tweets = await page.evaluate(async () => {
+    return document.body.innerText;
+  });
+
+  await browser.close();
+
+  return tweets;
+}
 // Use the saved values
 // const { Client, LocalAuth } = require('whatsapp-web.js');
 
@@ -391,7 +426,6 @@ client.on("message",async(message) => {
 
     // --------------------------------------------------------
 
-
     // const options = {
     //   method: "GET",
     //   url: "https://alpha-vantage.p.rapidapi.com/query",
@@ -423,7 +457,6 @@ client.on("message",async(message) => {
     // });
     // -----------------------------------------------------------
 
-     
     const scores = {
       "Global Quote": {
         "01. symbol": "MSFT",
@@ -444,6 +477,30 @@ client.on("message",async(message) => {
       text += `${key}: ${value}\n`;
     }
     message.reply(text);
+  } else if (message.body === "top stocks") {
+    const data = [
+      "AMD",
+      "AAPL",
+      "FB",
+      "GE",
+      "GOOGL",
+      "INTC",
+      "NFLX",
+      "NVDA",
+      "PEP",
+      "TSLA",
+      "W",
+    ];
+    console.log("openAI");
+    axios
+      .get("http://127.0.0.1:5001/watsapp-algo-trading/us-central1/helloWorld")
+      .then((response) =>{
+        var text = "Here's the list of stock tickers: " + data.join(", ");
+        message.reply(text);
+
+      } )
+      .catch((error) => console.error(error));
+    
   }
 });
 client.on("ready", () => {
