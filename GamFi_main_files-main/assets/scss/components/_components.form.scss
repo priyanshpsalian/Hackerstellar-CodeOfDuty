@@ -1,0 +1,329 @@
+/*--- account style ---*/
+.account__area{
+    background: #090A1A;
+    position: relative;
+    padding: 96px 0px 0px 0px;
+}
+.account-bg {
+    background: url("../images/kycimg/signUpBgimage.svg");
+    background-position: center center;
+    background-size: cover;
+    height: 340px;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+}
+.account__content{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-bottom: 150px;
+    max-width: 690px;
+    margin: auto;
+}
+.account__form{
+    background: rgba(30, 31, 53, 0.8);
+    max-width: 690px;
+    width: 100%;
+    margin: auto;
+    padding: 63px 60px 56px 60px;
+    position: relative;
+    z-index: 2;
+    @include breakpoint(767px){
+        padding: 30px;
+    }
+}
+.account-shadow{
+    background: url("../images/kycimg/BlurShadow.svg");
+    background-position: center center;
+    background-size: cover;
+    height: 340px;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    bottom: 5px;
+    z-index: 1;
+}
+
+.account__title{
+    h2{
+        font-family: $russoOneFont;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 43px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 23px;
+        color: $white;
+    }
+    h3{
+        font-family: $interFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+        text-transform: none;
+        max-width: 430px;
+        margin: auto;
+    }
+    @include breakpoint(480px){
+        h2{
+            font-size: 24px;
+            line-height: 30px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.account__form.signInForm h3 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: none;
+    max-width: 356px;
+    margin: auto;
+    margin-bottom: 29px;
+}
+.account__form.ForgotPassForm h3 {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: none;
+    max-width: 356px;
+    margin: auto;
+    margin-bottom: 29px;
+}
+
+.account__form form .btn_custom {
+    width: 100%;
+    height: 60px;
+    background: #6D4AFE;
+    border: none;
+    outline: none;
+    font-family: Russo One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+}
+
+
+.item-bottom{
+    h4{
+        font-family: $interFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    h4 a{
+        font-family: $interFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+        color: #6D4AFE;
+        transition: 0.3s;
+        &:hover{
+            color: $white;
+        }
+    }
+}
+
+.input__group__between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .input__group{
+        width: 48%;
+    }
+    @include breakpoint(991px){
+        flex-direction: column;
+        .input__group{
+            width: 100%;
+        }
+    }
+}
+
+.input__group{
+    label{
+        margin-bottom: 5px;
+        font-family: $russoOneFont;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+    }
+    input,
+    textarea{
+        width: 100%;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        background-color: transparent;
+        box-sizing: border-box;
+        outline: none;
+        font-family: $interFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 40px;
+        color: $white;
+        padding: 8px 21px;
+    }
+    textarea{
+        resize: none;
+    }
+    &--v2{
+        input,
+        textarea{
+            padding: 8px 19px;
+        }
+    }
+}
+
+.input-overlay{
+    position: relative;
+    input{
+        padding-left: 77px;
+    }
+    .overlay{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        height: calc(100% - 4px);
+        border-right: 2px solid rgba(255, 255, 255, 0.15);
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i{
+            font-size: 18px;
+        }
+    }
+}
+
+.account__form .item-text{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    input{
+        appearance: none;
+        position: relative;
+        width: 20px;
+        height: 20px;
+        &::before{
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        &::after{
+            position: absolute;
+            content: "\f00c";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "FontAwesome";
+            color: $white;
+            opacity: 0;
+        }
+        &:checked{
+            &::before{
+                background-color: #6D4AFE;
+            }
+            &::after{
+                opacity: 1;
+            }
+        }
+    }
+    label{
+        font-family: $interFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        a{
+            color: #6D4AFE;
+            transition: 0.3s;
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+    a{
+        font-family: $interFont;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.7);
+        transition: 0.3s;
+        &:hover{
+            color: $white;
+        }
+    }
+}
+
+/*--- Gamfi Form Content Section CSS ---*/
+.apply-section{
+    background-color: $bgColor;
+}
+
+.input-list{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    label{
+        cursor: pointer;
+    }
+    input{
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid #3a3b48;
+        position: relative;
+        transition: 0.3s;
+        &::before{
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #a3ff12;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        &:checked{
+            border: 2px solid #568416;
+            &::before{
+                opacity: 1;
+            }
+        }
+    }
+}

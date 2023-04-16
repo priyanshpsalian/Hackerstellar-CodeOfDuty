@@ -1,0 +1,362 @@
+/* --- Gamfi previous Section CSS ---*/
+.gamfi-previous-section {
+    background: #090b1a;
+}
+
+.gamfi-previous-section .project-right-menu{
+    .access i {
+        padding-left: 60px;
+    }
+    .block i {
+        padding-left: 30px;
+    }
+    .chain {
+        padding-left: 80px;
+    }
+} 
+
+.previous-mainmenu .menu-list {
+    font-family: $russoOneFont;
+    &.date-menu {
+        padding: 0 20px;
+    }
+    .date-list {
+        width: 13%;
+        position: relative;
+    }
+    .date_2 {
+        left: 20px;
+    }
+    .date_3 {
+        left: 30px;
+    }
+    .date_4 {
+        left: 50px;
+    }
+    .date_5 {
+        left: 65px;
+    }
+    .date_6 {
+        left: 85px;
+    }
+    .date_7 {
+        left: 100px;
+    }
+}
+
+.previous-mainmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 0 30px;
+    li {
+        display: inline-block;
+        color: rgba($color: $white, $alpha: 0.7);
+        text-transform: uppercase;
+        transition: 0.4s;
+    }
+    .list1 {
+        width: 34.5%;
+    }
+    .list2 {
+        width: 10.5%;
+    }
+    .list3 {
+        width: 17.8%;
+    }
+    .list4 {
+        width: 17.4%;
+    }
+    .list5 {
+        width: 14%;
+    }
+}
+
+.gamfi-previous-section .form-check {
+    padding: 17px 68px;
+    cursor: pointer;
+    input,
+    label{
+        cursor: pointer;
+    }
+}
+
+.gamfi-previous-section .form-switch {
+    font-family: $russoOneFont;
+    text-transform: uppercase;
+    transition: 0.4s;
+    cursor: pointer;
+    border-right: 0px;
+    padding: 18px 28px;
+    &:hover{
+        color: $white;
+    }
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 45px;
+        height: 24px;
+    }
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }   
+    .title {
+        margin-left: 6px;
+    } 
+}
+
+.gamfi-previous-section .form-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #434350;
+    -webkit-transition: .4s;
+    transition: .4s;
+    &::before{
+        position: absolute;
+        content: "";
+        height: 14px;
+        width: 14px;
+        left: 6px;
+        bottom: 5px;
+        background-color: $white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+    &.round{
+        border-radius: 34px;
+        &::before{
+            border-radius: 50%;
+        }
+    }
+}
+
+.gamfi-previous-section .form-switch {
+    input:checked + .slider {
+        background-color: $themeColorBlue;
+    }
+    input:checked + .slider:before {
+        left: 0;
+    }
+    input:focus + .slider {
+        box-shadow: 0 0 1px $themeColorBlue;
+    }
+    input:checked + .slider:before {
+        transform: translateX(26px);
+    }
+} 
+
+.previous-item {
+    background: $bgColor5;
+    margin-bottom: 30px;
+    padding: 30px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.4s;
+    color: $white;
+    .previous-gaming {
+        display: flex;
+    }
+    .previous-gaming img {
+        margin-right: 20px;
+    }
+}
+
+.previous-price{
+    a {
+        transition: 0.4s;
+        &:hover{
+            color: rgba($color: $white, $alpha: 0.7);
+        }
+    }
+    .dsc {
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+}
+
+.previous-chaining {
+    width: 36%;
+    display: flex;
+    align-items: center;
+    img {
+        margin-right: 82px;
+    }
+    li {
+        display: inline-block;
+        padding-right: 5px;
+        text-transform: uppercase;
+        &:last-child{
+            padding-right: 0;
+        }
+    }
+}
+
+.previous-item .previous-gaming {
+    width: 44%;
+}
+
+.previous-raise {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    span{
+        margin-right: 35px;
+    }
+    .progress-inner {
+        width: 196px;
+    }
+}
+
+.previous-item {
+    .hover-shape-bg {
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        width: 14px;
+    }
+    .hover_shape1 {
+        left: 46.5%;
+    }
+    .hover_shape2 {
+        left: 48.5%;
+    }
+    .hover_shape3 {
+        width: 26px;
+        left: 50.5%;
+    }
+    &:hover{
+        background: radial-gradient(circle, rgba(96, 79, 169, 0.58) -7%, $bgColor2 30%);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .hover-shape-bg {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.gamfi-previous-section .progress-inner {
+    padding-bottom: 7px;
+    .progress,
+    .progress-bar{
+        background-size: 10px 20px;
+        height: 6px;
+    }
+}
+
+.gamfi-previous-section .project-item {
+    background-image: radial-gradient(circle, rgba(86, 75, 135, 0.85) 0%, $bgColor2 100%);
+    margin-bottom: 30px;
+    padding: 30px 30px 10px;
+    .project-info {
+        margin-bottom: 28px;
+    }
+    .project-info img {
+        margin-right: 20px;
+    }
+    a {
+        color: $white;
+        &:hover{
+            color: $white;
+        }
+    }
+    .heading-title {
+        margin-bottom: 40px;
+        h4 {
+            font-size: 16px;
+            margin-bottom: 0;
+            position: relative;
+            &::before{
+                width: 197px;
+                height: 35px;
+                content: "";
+                background-image: url("../images/bg/shape-bg.png");
+                position: absolute;
+                left: -30px;
+                top: -7px;
+            }
+        }
+    }
+}
+
+.gamfi-previous-section .project-item .project-icon {
+    position: relative;
+    top: -6px;
+}
+
+.gamfi-previous-section .project-item .project-media li {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 15px;
+    &:last-child{
+        padding-bottom: 0;
+    }
+    strong {
+        font-weight: 400;
+        color: $white;
+    }
+    span {
+        float: right;
+        color: $white;
+    }
+    
+}
+
+.gamfi-previous-section .project-item .project-media .social-icon-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: right;
+    margin-top: -22px;
+    li {
+        display: inline-block;
+        padding-bottom: 0;
+        i{
+            padding-left: 10px;
+        }
+        a{
+            color: $white;
+            i{
+                font-size: 15px;
+                transition: 0.4s;
+                &:hover{
+                    color: $themeColor;
+                }
+            }
+        }
+    }
+}
+
+.gamfi-previous-section .calender-image-area {
+    position: relative;
+}
+
+.gamfi-previous-section .calender-image-area img {
+    cursor: pointer;
+}
+
+.gamfi-previous-section .calender-image-area .project-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 370px;
+    transform: scale(0);
+    transition: 0.4s;
+    z-index: 10;
+}
+
+.gamfi-previous-section .calender-image-area:hover .project-item {
+    transform: scale(1);
+}
+
+.gamfi-previous-section .tab-pane .previous-item {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,57 @@
+/*--- Gamfi Team Section CSS ---*/
+.gamfi-team-section {
+    background: url("../images/bg/team-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-color: $bgColor;
+}
+
+.team-item {
+    background: rgba($color: #1A1B2F, $alpha: 0.85);
+    backdrop-filter: blur(5px);
+    margin-bottom: 30px;
+    padding: 35px 0 30px 0;
+    transition: 1.4s;
+    .border-shadow {
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.4s;
+    }
+    &:hover{
+        background-image: radial-gradient(circle, rgba($color: #8978D3, $alpha: 0.4) 0%, $bgColor2 100%);
+        .border-shadow {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    img {
+        margin-bottom: 45px;
+    }
+    a {
+        color: $white;
+        transition: 0.4s;
+        &:hover{
+            color: rgba($color: $white, $alpha: 0.7);
+        }
+    }
+    .dsc {
+        margin-bottom: 15px;
+    }
+}
+
+.team-item .team-icon-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+        display: inline-block;
+        padding: 0 7px;
+    }
+    li  a {
+        color: rgba($color: $white, $alpha: 0.5);
+        transition: 0.4s;
+        i{
+            font-size: 15px;
+        }
+    }
+}

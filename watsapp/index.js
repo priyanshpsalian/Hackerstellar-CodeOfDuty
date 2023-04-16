@@ -108,7 +108,9 @@ client.on("message",async(message) => {
     message.reply(media);
     // client.sendMessage(message.from, `${media}`);
   } else if (message.body === "Hi") {
-    message.reply("Hi,How are you!");
+    message.reply(
+      "Hi there! Here are some commands that you can use : \n\n- news-get the latest news\n- risk AAPL-view the risk analysis\n- view AAPL-view the risk price and quota\n- top stocks-view top stocks\n- buy 4 AAPL-buy stocks in one click\n- analysis-get my performance report"
+    );
   } else if (message.body === "Good morning") {
     message.reply(
       "Let your morning be the start of your new life. Do your best and forget about the rest. Good morning!"
@@ -515,12 +517,9 @@ client.on("message",async(message) => {
           message.reply(text);
         })
         .catch((error) => console.error(error));
-      
     } catch (e) {
       console.log(e);
-      
     }
-    
   } else if (message.body.startsWith("buy ")) {
     var data = message.body.replace("buy ", "");
     try {
@@ -543,7 +542,7 @@ client.on("message",async(message) => {
       console.log(e, "error");
     }
     message.reply("Order Placed");
-  } else if (message.body==="analysis") {
+  } else if (message.body === "analysis") {
     const pdf = fs.readFileSync("file.pdf");
     // send the PDF file as an attachment
     // const media = MessageMedia.fromFilePath("file.pdf");
@@ -551,8 +550,27 @@ client.on("message",async(message) => {
     // const media = await MessageMedia.fromUrl(
     //   "https://via.placeholder.com/350x150.png"
     // );
-    message.reply("https://via.placeholder.com/350x150.png");
- 
+    message.reply(
+      "https://github.com/krishcshah/GamFi_main_files/raw/main/Portfolio-Comparison-Reports-Submitted-to-FINRA.pdf"
+    );
+  } else if (message.body === "alerts") {
+    // const pdf = fs.readFileSync("file.pdf");
+    // send the PDF file as an attachment
+    // const media = MessageMedia.fromFilePath("file.pdf");
+    // message.sendMessage(media);
+    // const media = await MessageMedia.fromUrl(
+    //   "https://via.placeholder.com/350x150.png"
+    // );
+    const number = "+917045397413";
+    // Getting chatId from the number.
+    // we have to delete "+" from the beginning and add "@c.us" at the end of the number.
+    const chatId = number.substring(1) + "@c.us";
+
+    // Sending message.
+    var text =
+      "Stocks alert: The price of ABBVIE INC. stock has exceeded $100! having symbol ABBV";
+    client.sendMessage(chatId, text);
+    
   }
 });
 client.on("ready", () => {

@@ -1,0 +1,59 @@
+/*--- gamfi navigation section CSS ---*/
+.gamfi-navigation ul{
+    li {
+        display: inline-block;
+        position: relative;
+        + li {
+            margin-left: 4px;
+        }
+        &:first-child{
+            top: 2px;
+            a{
+                padding: 11px 19px 8px;
+                position: relative;
+                top: -1px;
+            }
+        }
+    }
+    li a{
+        display: block;
+        border: 1px solid $borderColor2;
+        color: $white;
+        padding: 10px 20px;
+        font-family: $russoOneFont;
+        text-transform: uppercase;
+        transition: 0.4s;
+        .icon-Vector{
+            font-size: 13px;
+        }
+        .icon-arrow_right {
+            font-size: 13px;
+        }
+        &.active:not(.black-shape),
+        &:hover:not(.black-shape){
+            background: $borderColor2;
+            color: $themeColor;
+        }
+    }
+} 
+
+/*--- breadcrumb gamfi navigation section CSS ---*/
+.breadcrumbs-form .gamfi-navigation {
+    position: relative;
+    top: -3px;
+}
+
+.breadcrumbs-form .gamfi-navigation ul {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    li{
+        &:first-child{
+            top: 0;
+            a{
+                padding-top: 11px;
+                padding-bottom: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,1024 @@
+/*--- Governance ---*/
+.governance_breadcrumbs_scetion{
+    padding-bottom: 60px;
+    .governance_breadcrumbs_content{
+        position: relative;
+    }
+}
+
+.gamfi-breadcrumbs-section.governance_breadcrumbs_scetion {
+    .breadcrumbs-form form{
+        margin-right: 0px;
+    }
+}
+
+.governanc_content_section{
+    background: $bgColor;
+    padding-bottom: 140px;
+    position: relative;
+    z-index: 3;
+    padding-top: 66px;
+    .container{
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.governanc_content_right_card {
+    background: rgba($color: $bgColor2, $alpha: 0.8);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    padding-top: 39px;
+    max-width: 370px;
+    margin: auto;
+    margin-bottom: 30px;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 0px;
+        span{
+            margin-left: 5px;
+        }
+    }
+}
+
+.governanc_content_right_card ul{
+    margin-top: 16px;
+    margin-bottom: 20px;
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    li span {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 50px;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    li strong {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 50px;
+        text-align: right;
+        color: $white;
+    }
+}
+
+.governanc_content_right_card_btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    button {
+        height: 60px;
+        width: 100%;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        border: none;
+        outline: none;
+    }
+}
+
+.governanc_content_right_card_btns{
+    button.claim_rewords_btn{
+        margin-bottom: 30px;
+        background: $themeColorBlue;
+    }
+    button.make_proposal_btn{
+        background: rgba($color: $white, $alpha: 0.1);
+    }
+}
+
+.governanc_content_left_cards_sections{
+    margin-bottom: 40px;
+}
+
+.governanc_content_left_hash_card {
+    min-height: 195px;
+    width: 100%;
+    background: rgba(30, 31, 53, 0.7);
+    backdrop-filter: blur(5px);
+    margin-top: 30px;
+    padding: 28px 30px;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 158%;
+        color: $white;
+        margin-bottom: 24px; 
+        a:hover{
+            color: $white;
+        }
+        span{
+            margin-right: 8px;
+        }
+    }
+    h3 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 158%;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 8px;
+        span{
+            margin-left: 5px;
+        }
+    }
+}
+
+.governanc_content_left_hash_card_stutas{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    h4 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 158%;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 0px;
+    }
+    h4 span {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        &.white{
+            color: $white;
+        }
+        &.green{
+            color: #33EFB0;
+        }
+        &.red{
+            color: #F31313;
+        }
+    }
+}
+
+
+.governanc_content_left_hash_card_stutas {
+    .stutas_upcoming{
+        height: 9px;
+        width: 9px;
+        background: rgba($color: $white, $alpha: 0.3);
+        margin-left: 6px;
+        border-radius: 50%;
+    }
+    .stutas_active{
+        height: 9px;
+        width: 9px;
+        background: #33EFB0;
+        margin-left: 6px;
+        border-radius: 50%;
+    }
+    
+}
+
+.stutas_live{
+    margin-left: 6px;
+    position: relative;
+    .video__icon {
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        right: -8px;
+        top: -8px;
+        p{
+            color: #000;
+            text-align: center;
+        }
+        .circle--outer {
+            border: 1px solid #33EFB0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            position: relative;
+            opacity: .8;
+            -webkit-animation: circle 2s ease-in-out infinite;
+            animation: circle 2s ease-in-out infinite;
+        }
+        .circle--inner {
+            background: #33EFB0;
+            left: 3px;
+            top: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            opacity: .8;
+            &::after{
+                content: '';
+                display: block;
+                border: 1px solid #33EFB0;
+                border-radius: 50%;
+                width: 14px;
+                height: 14px;
+                top: -2px;
+                left: -2px;
+                position: absolute;
+                opacity: .8;
+                animation: circle 2s ease-in-out .2s infinite;
+            }
+        }
+    }
+}
+
+@-webkit-keyframes circle {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes circle {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.governanc_content_left_hash_card_stutas .stutas_failed{
+    height: 9px;
+    width: 9px;
+    background: #F31313;
+    margin-left: 6px;
+    border-radius: 50%;
+}
+
+.governanc_content_left_hash_card ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 27px;
+    li{
+        width: 30.5%; 
+    }
+    li .progress_bg{
+        width: 100%;
+        height: 8px;
+        background: rgba($color: $white, $alpha: 0.1);
+    }
+    li .progress_bg .progress_bar.for{
+        height: 100%;
+        background: #33EFB0;
+    }
+    li .progress_bg .progress_bar.against{
+        height: 100%;
+        background: rgba(243, 19, 19, 0.4);
+    }
+    li .progress_bg .progress_bar.abstain{
+        height: 100%;
+        background: rgba($color: $white, $alpha: 0.3);
+    }
+    li .progress_bg .progress_bar{
+        animation-duration: 2s;
+    }
+    li .progress_bg .progress_bar.progress0{
+        width: 0%;
+        animation-name: progress0;
+    }
+    li .progress_bg .progress_bar.progress1{
+        width: 1%;
+        animation-name: progress1;
+    }
+    li .progress_bg .progress_bar.progress2{
+        width: 2%;
+        animation-name: progress2;
+    }
+    li .progress_bg .progress_bar.progress3{
+        width: 3%;
+        animation-name: progress3;
+    }
+    li .progress_bg .progress_bar.progress8{
+        width: 8%;
+        animation-name: progress8;
+    }
+    li .progress_bg .progress_bar.progress14{
+        width: 14%;
+        animation-name: progress14;
+    }
+    li .progress_bg .progress_bar.progress15{
+        width: 15%;
+        animation-name: progress15;
+    }
+}
+
+@keyframes progress0 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes progress1 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 1%;
+    }
+}
+
+@keyframes progress2 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 2%;
+    }
+}
+
+@keyframes progress3 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 3%;
+    }
+}
+
+@keyframes progress8 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 8%;
+    }
+}
+
+@keyframes progress14 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 14%;
+    }
+}
+
+@keyframes progress15 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 15%;
+    }
+}
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress19{
+    width: 19%;
+    animation-name: progress19;
+}
+@keyframes progress19 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 19%;
+    }
+}
+
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress26{
+    width: 26%;
+    animation-name: progress26;
+}
+@keyframes progress26 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 26%;
+    }
+}
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress38{
+    width: 38%;
+    animation-name: progress38;
+}
+@keyframes progress38 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 38%;
+    }
+}
+
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress43{
+    width: 43%;
+    animation-name: progress43;
+}
+@keyframes progress43 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 43%;
+    }
+}
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress72{
+    width: 72%;
+    animation-name: progress72;
+}
+@keyframes progress72 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 72%;
+    }
+}
+
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress83{
+    width: 83%;
+    animation-name: progress83;
+}
+@keyframes progress83 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 83%;
+    }
+}
+
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress85{
+    width: 85%;
+    animation-name: progress85;
+}
+@keyframes progress85 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
+}
+
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress92{
+    width: 92%;
+    animation-name: progress92;
+}
+@keyframes progress92 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 92%;
+    }
+}
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress95{
+    width: 95%;
+    animation-name: progress95;
+}
+@keyframes progress95 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 95%;
+    }
+}
+
+
+.governanc_content_left_hash_card ul li .progress_bg .progress_bar.progress99{
+    width: 99%;
+    animation-name: progress99;
+}
+@keyframes progress99 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 99%;
+    }
+}
+
+
+.governanc_content_left_hash_card ul{
+    li h5 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 0px;
+        margin-top: 7px;
+    }
+} 
+
+.governancdetaile_content_left{
+    padding-right: 20px;
+}
+.governanc_details_back_btn{
+    margin-bottom: 35px;
+    a {
+        background: none;
+        outline: none;
+        border: none;
+        padding: 0px;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+        span{
+            font-family: $interFont;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+    }
+}
+
+.governanc_details_heading{
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 158%;
+        margin-bottom: 0px;
+        color: $white;
+    }
+    h3 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        color: $white;
+        margin-bottom: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 18px;
+        &::before{
+            content: url("../images/icons/user-octagon.svg");
+            margin-right: 10px;
+        }
+        span {
+            color: rgba($color: $white, $alpha: 0.7);
+            margin-right: 5px;
+        }
+    }
+    h4 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 16px;
+        color: $white;
+        margin-bottom: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &::before{
+            content: '';
+            height: 9px;
+            width: 9px;
+            border-radius: 50%;
+            background: #33EFB0;
+            margin-right: 10px;
+        }
+        span {
+            color: #33EFB0;
+            margin-right: 5px;
+        }
+    }
+    p{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        max-width: 693px;
+        width: 100%;
+        a{
+            color: rgba(51, 239, 176, 0.7);
+            word-break: break-all;
+        }
+    }
+} 
+
+.governanc_details_subtitle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 23px;
+    margin-top: 30px;
+}
+
+.cast_your_vote_card {
+    background: rgba($color: $bgColor2, $alpha: 0.8);
+    backdrop-filter: blur(5px);
+    margin-bottom: 20px;
+    h3 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $white;
+        padding: 30px;
+        margin-bottom: 0px;
+    }
+}
+
+.cast_your_vote_radio{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+        width: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px 30px;
+        border-right: 1px solid rgba($color: $white, $alpha: 0.1);
+        cursor: pointer;
+    }
+}
+
+.cast_your_vote_radio .radio_container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    font-family: $russoOneFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 158%;
+    color: $white;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.cast_your_vote_radio .radio_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.cast_your_vote_radio .checkmark {
+    position: absolute;
+    //top: 18;
+    top: 18px;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background: rgba($color: $white, $alpha: 0.1);
+    border-radius: 50%;
+}
+.cast_your_vote_radio .radio_container input:checked ~ .checkmark {
+    background: #33EFB0;
+}
+.cast_your_vote_radio .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.cast_your_vote_radio .radio_container input:checked ~ .checkmark:after {
+    display: block;
+}
+.cast_your_vote_radio .radio_container .checkmark:after {
+    left: 9.5px;
+    top: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid #000000;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cast_your_vote_card button {
+    background: $themeColorBlue;
+    height: 60px;
+    width: 170px;
+    font-family: $russoOneFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+    border: none;
+    outline: none;
+    margin: 30px;
+}
+
+
+.governanc_details_text{
+    padding-top: 45px;
+    h4 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: $white;
+        margin-bottom: 21px;
+    }
+    p {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 21px;
+    }
+}
+.governce_vote_table ul{
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 67px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    li h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    li h3 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: right;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    li h4 {
+        margin-bottom: 0px;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: $white;
+        width: 240px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        &::after{
+            content: url("../images/icons/governance_copy.svg");
+            margin-left: 7px;
+            margin-top: 4px;
+        }
+        span{
+            margin-right: 9px;
+        }
+    }
+    li h5 {
+        margin-bottom: 0px;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: $white;
+        text-align: left;
+        max-width: 150px;
+        width: 100%;
+    }
+    li h6 {
+        margin-bottom: 0px;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: $white;
+        width: 87px;
+        text-align: right;
+    }
+} 
+
+
+.governance_vote_modal_content{
+    border-radius: 0px;
+}
+
+.governance_vote_modal_form {
+    h4 {
+        margin-bottom: 0px;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 36px;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    h3 {
+        margin-bottom: 0px;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 36px;
+        color: $white;
+    }
+}
+
+.governance_vote_modal_form form{
+    margin-top: 24px;
+    span {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    input {
+        border: 2px solid rgba(255, 255, 255, 0.12);
+        width: 100%;
+        height: 60px;
+        outline: none;
+        background: transparent;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+        margin-top: 15px;
+        padding: 0px 21px;
+    }
+    button {
+        width: 100%;
+        height: 60px;
+        border: none;
+        outline: none;
+        background: $themeColorBlue;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+
+.current_results_progress_content{
+    margin-top: 30px;
+    p {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 10px;
+    }
+    .current_results_progress_bg{
+        height: 8px;
+        background: rgba($color: $white, $alpha: 0.1);
+        width: 100%;
+    }
+    .current_results_progress_bar{
+        height: 100%;
+        animation-name: progress_bar;
+    }
+    .current_results_progress_bar.for{
+        width: 85%;
+        background: #33EFB0;
+    }
+    .current_results_progress_bar.against{
+        width: 3%;
+        background: rgba(243, 19, 19, 0.4);
+    }
+    .current_results_progress_bar.abstain{
+        width: 12%;
+        background: rgba($color: $white, $alpha: 0.3);
+    }
+}
+
+/*
+@keyframes progress_bar {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 50%
+    }
+}
+*/
+
+.governanc_content_right_card ul{
+    li p {
+        margin-bottom: 0px;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 50px;
+        text-align: right;
+        color: $white;
+        span{
+            margin-right: 10px;
+        }
+        a{
+            color: #33EFB0;
+            img{
+                margin-left: 8px;
+            }
+        }
+    }
+} 

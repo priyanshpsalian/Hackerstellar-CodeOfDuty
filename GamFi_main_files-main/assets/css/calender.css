@@ -1,0 +1,392 @@
+.calendar {
+    position: relative;
+    overflow: hidden;
+    text-transform: capitalize;
+    text-align: center;
+    font: 15px/1em inherit;
+    color: #ffffff;
+}
+
+.calendar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.calendar header .simple-calendar-btn {
+    display: inline-block;
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #CBD1D2;
+    border-radius: 50%;
+    border: 2px solid #CBD1D2;
+}
+
+.calendar header .simple-calendar-btn:hover {
+    background: #CBD1D2;
+    color: white;
+}
+
+.calendar header .simple-calendar-btn:before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    border-style: solid;
+    border-width: 3px 3px 0 0;
+    transform: rotate(45deg);
+    transform-origin: center center;
+}
+
+.calendar header .btn-prev {
+    top: 26px;
+    left: 0;
+    transform: rotate(-180deg);
+}
+
+.calendar header .btn-next {
+    top: 26px;
+    right: 0;
+}
+
+.calendar header .btn-next:before {
+    transform: rotate(45deg);
+}
+
+.calendar header .month {
+    padding: 0;
+    margin: 0;
+}
+
+.calendar header .month .year {
+    font-size: 0.6em;
+    font-weight: 100;
+}
+
+.calendar table {
+    width: 100%;
+    margin: 20px 0;
+    border-spacing: 0px;
+}
+
+.calendar thead {
+    font-size: 1.2em;
+    font-weight: 600;
+
+}
+
+.calendar td {
+    /* padding: 20px 18px 20px 20px; */
+    height: 62px;
+    height: 62px;
+}
+
+@media only screen and (min-width: 600px) {
+    .calendar td {
+        padding: 20px 18px 20px 20px;
+        height: 162px;
+        border: 3px solid #090A1A;
+        vertical-align: super;
+        background: rgba(30, 31, 53, 0.8);
+        z-index: 1;
+        width: 162px;
+        font-family: 'Russo One';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: left;
+    }
+}
+
+.eventShowImg {
+    margin: 50px 0px;
+    padding-right: 4px;
+    /* max-width: 34px; */
+    display: inline-grid;
+    justify-content: flex-start;
+}
+
+@media only screen and (max-width: 600px) {
+    .calendar td {
+        /* padding: 20px 18px 20px 20px; */
+        height: 62px;
+        width: 62px;
+        border: 2px solid #090A1A;
+        vertical-align: super;
+        background: rgba(30, 31, 53, 0.8);
+        z-index: 1;
+        font-size: 14px;
+        line-height: 19px;
+        text-align: left;
+    }
+
+    .eventShowImg {
+        margin: 10px 0px !important;
+        max-width: 20px !important;
+    }
+}
+
+.day-names td {
+    /* padding: .4em .1em !important; */
+    height: 62px;
+    background: #090A1A;
+    border: none;
+}
+
+.calendar .day {
+    position: relative;
+    display: block;
+    /* display: inline-block; */
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    align-items: flex-start;
+    margin: -10px 0px;
+}
+
+
+
+/* .calendar .day:hover {
+    border: 2px solid #6691CC;
+} */
+
+/* .calendar .day.today {
+    background: #6691CC !important;
+    color: white;
+} */
+
+.calendar .day.today.has-event:after {
+    background: white;
+}
+
+.calendar .day.wrong-month {
+    /* color: #04f1de; */
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.calendar .day.wrong-month:hover {
+    border: 2px solid transparent;
+}
+
+.calendar .day.disabled {
+    cursor: default;
+}
+
+.calendar .day.disabled:hover {
+    border: 2px solid transparent;
+}
+
+.calendar .event-container {
+    display: none;
+    padding: 70px;
+    background: #1E1F35;
+    /* opacity: 80%; */
+    position: absolute;
+    /* position: fixed; */
+    width: 1920px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    background: rgba(14, 15, 21, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.calendar .event-container .event-wrapper {
+    /* overflow-y: auto; */
+    max-height: 100%;
+    /* width: 370px; */
+    margin-left: 320px;
+}
+
+.calendar .event-container .close {
+    /* position: absolute; */
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.calendar .event-container .close:before,
+.calendar .event-container .close:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: #CBD1D2;
+}
+
+.calendar .event-container .close:before {
+    transform: rotate(45deg);
+}
+
+.calendar .event-container .close:after {
+    transform: rotate(-45deg);
+}
+
+.calendar .event-container .event {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+    text-align: left;
+    color: white;
+    /* border: 1px solid #fff; */
+}
+
+.calendar .event-container .event-date {
+    margin-bottom: 1em;
+}
+
+.calendar .event-container .event-hour {
+    float: right;
+}
+
+.calendar .event-container .event-description {
+    font-weight: 600;
+}
+
+.calendar .filler {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    /* background: #545A5C; */
+    background: #585b88;
+    transform: translate(-50%, -50%);
+}
+
+/* Calendar Images show in dates */
+
+
+/* Modal-body padding: 1rem; */
+.modal-body {
+    padding: 0px !important;
+}
+
+/* Event Card style */
+.eventCard {
+    /* height: 510px !important; */
+    border: 0px !important;
+    border-radius: 0px !important;
+    width: 370px !important;
+    color: #ffffff;
+    background-color: #1E1F35 !important;
+}
+
+.modal .eventContainer {
+    max-width: 370px !important;
+    /* margin: auto;
+    margin-top: 50px; */
+}
+
+
+.eventCard img {
+    margin-bottom: 24px !important;
+    height: 70px !important;
+    width: 70px !important;
+
+}
+
+.eventCard .modal-body {
+    margin: -36px 0px 10px -10px !important;
+}
+
+.eventCard .cardtitle {
+    font-family: Russo One;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-bottom: 13px !important;
+}
+
+.eventCard .card-sub-title {
+    margin-bottom: 16px !important;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.eventCard .igo-bar {
+    margin-top: 15px;
+}
+
+.eventCard .igo-bar .igo-title {
+    position: absolute;
+    padding-top: 5px;
+}
+
+.eventCard .igo-bar .igo-shape {
+    position: absolute;
+    padding: 5px 30px;
+    left: 0;
+    width: 196.8px;
+    height: 35px;
+    margin-left: -26px;
+    background: url(../images/Shape.png);
+}
+
+.eventCard .igo-price {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFFB2;
+    padding-bottom: 12px !important;
+}
+
+.eventCard .igo-img {
+    position: absolute;
+    right: -8px;
+    background: url(../images/igo-img.png);
+    width: 35px;
+    height: 35px;
+    margin-top: -4px;
+}
+
+.eventCard .igo-info {
+    font-family: Russo One;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-top: 65px;
+}
+
+.eventCard .igo-social-icons {
+    /* margin-top: 20px; */
+    padding-top: 15px;
+}
+
+.eventCard .igo-social-icons span {
+    padding-right: 10px !important;
+}
+
+.btn-close {
+    background: none !important;
+    color: #ffffff !important;
+}
+
+.modal-header .btn-close {
+    margin: -70px -42px -10px auto;
+}

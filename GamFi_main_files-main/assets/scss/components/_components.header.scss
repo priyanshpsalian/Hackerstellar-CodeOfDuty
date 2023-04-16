@@ -1,0 +1,671 @@
+/*--- Gamfi Header Section CSS ---*/
+.gamfi-header-section {
+    background-color: $bgColor;
+    padding: 25px 0;
+    &.transparent-header {
+        background: transparent;
+        position: absolute;
+        width: 100%;
+        z-index: 12;
+    }
+    &.default-header {
+        background: $bgColor;
+        position: relative;
+        z-index: 11;
+        &::after,
+        &::before{
+            width: 252px;
+            height: 100%;
+            content: "";
+            background-image: url("../images/bg/header-shape1.png");
+            position: absolute;
+            top: 0;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+        &::after{
+            background-image: url("../images/bg/header-shape1.png");
+            left: 0;
+        }
+        &::before{
+            background-image: url("../images/bg/header-shape2.png");
+            right: 0;
+        }
+    }
+}
+
+.gamfi-header-section .logo {
+    margin-right: 60px;
+}
+
+
+.menu-area{
+    position: relative;
+    z-index: 1;
+}
+
+.gamfi-header-section .heaader-inner-area ul{
+    li {
+        display: inline-block;
+        position: relative;
+        img {
+            margin-right: 10px;
+        }
+    }
+    li:hover ul{
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+    li ul {
+        position: absolute;
+        left: 0px;
+        top: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        transform: scaleY(0);
+        transform-origin: 0 0 0;
+        transition: all 0.3s ease-in-out;
+        z-index: 10;
+        li {
+            display: block;
+            width: 240px;
+            + li {
+                border-top: 1px solid #343441;
+                margin-bottom: -1px;
+            }
+        }
+        li a {
+            display: block;
+            background: #222231;
+            font-size: 16px;
+            font-family: $russoOneFont;
+            background: rgba(19, 20, 44, 0.98);
+            backdrop-filter: blur(4px);
+            padding: 15px 24px;
+            transition: 0.4s;
+            color: rgba(255, 255, 255, 0.7);
+            i {
+                font-size: 20px;
+                color: $white;
+                margin-right: 10px;
+                position: relative;
+                top: 2px;
+            }
+            &:hover{
+                color: $white;
+            }
+        }
+    }
+} 
+
+.gamfi-header-section .header-menu ul {
+    li {
+        display: inline-block;
+        overflow: visible;
+        + li {
+            margin-left: 40px;
+        }
+    }
+    li.menu-item-has-children {
+        position: relative;
+        &::before{
+            content: "\e901";
+            position: absolute;
+            top: 18px;
+            right: -18px;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: "icomoon";
+            font-size: 7px;
+        }
+    }
+    li a {
+        display: block;
+        color: $white;
+        font-family: $russoOneFont;
+        font-weight: 400;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    li ul.sub-menu li {
+        margin-left: 0;
+        margin-bottom: -1px;
+    }
+    li ul.sub-menu li .sub-menu {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        transform: scaleY(0);
+        transform-origin: 0 0 0;
+        transition: all 0.3s ease-in-out;
+    }
+    li ul.sub-menu li:hover .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+    li ul.sub-menu li.menu-item-has-children {
+        position: relative;
+        &::before{
+            content: "\e902";
+            top: 22px;
+            right: 30px;
+            font-size: 10px;
+        }
+    }
+} 
+
+.gamfi-header-section .gamfi-btn-area ul {
+    li ul li a {
+        color: rgba(255, 255, 255, 0.7);
+        &:hover{
+            color: $white;
+        }
+    }
+    
+} 
+
+.gamfi-header-section .gamfi-btn-area ul .nav-expander {
+    margin-top: 15px;
+    .bar {
+        overflow: hidden;
+        span {
+            height: 2px;
+            display: block;
+            background: rgba(255, 255, 255, 0.7);
+            transition: all .5s ease;
+            cursor: pointer;
+            list-style: none;
+        }
+        span.dot1 {
+            width: 20px;
+            margin-bottom: 6px;
+        }
+        span.dot2 {
+            width: 30px;
+            margin-bottom: 6px;
+        }
+        span.dot3 {
+            width: 25px;
+        }
+        &:hover{
+            span.dot1,
+            span.dot3 {
+                width: 30px;
+            }
+        }
+    }
+}
+
+.gamfi-header-section .gamfi-btn-area > ul {
+    display: flex;
+}
+
+.gamfi-header-section .right_menu_togle {
+    background: $white;
+    padding: 66px 60px 50px 50px;
+    max-width: 400px;
+    width: 100%;
+    right: -500px;
+    z-index: 999;
+    transition: all 0.3s ease;
+    position: fixed;
+    overflow-y: auto;
+    .close-btn {
+        overflow: visible;
+        position: absolute;
+        top: 10px;
+        display: block;
+        z-index: 99;
+        right: 57px;
+        cursor: pointer;
+        transition: all .3s ease;
+        &:hover{
+            .nav-close .line span {
+                opacity: 0.85;
+            }
+        }
+    }
+    .close-btn .nav-close .line {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        span{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 3px !important;
+            height: 28px !important;
+            background: #151625;
+            border: none !important;
+            transition: all 0.3s ease;
+        }
+        span.line2 {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+}
+
+.gamfi-header-section .right_menu_togle .canvas-logo {
+    padding-left: 0;
+    padding-bottom: 35px;
+    img {
+        max-height: 25px;
+    }
+}
+
+.gamfi-header-section .mobile-navbar-menu .sub-menu {
+    display: none;
+    position: relative;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+.gamfi-header-section .mobile-navbar-menu .nav-menu{
+    li {
+        position: relative;
+    }
+    li a {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        display: block;
+        color: #090b1a;
+        padding: 10px 0;
+        line-height: 30px;
+        width: 100%;
+        font-family: $russoOneFont;
+    }
+    li li a {
+        padding-left: 25px;
+    }
+    li li li a {
+        padding-left: 50px;
+    }
+} 
+
+.gamfi-header-section .mobile-navbar-menu span.submenu-button {
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    top: 5px;
+    display: block;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    width: 100%;
+    cursor: pointer;
+    top: 0;
+    height: 50px;
+    &::before,
+    &::after{
+        position: absolute;
+        top: 24px;
+        right: 10px;
+        width: 20px;
+        height: 1px;
+        display: block;
+        background: #151625;
+        z-index: 2;
+        content: '';
+        right: 12px;
+        width: 12px;
+    }
+    &::before{
+        width: 1px;
+        height: 12px;
+        right: 17px;
+        top: 18px;
+    }
+    em {
+        display: block;
+        position: absolute;
+        right: 0;
+        border-radius: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.gamfi-header-section .mobile-navbar-menu .submenu-button.submenu-opened{
+    &::before {
+        display: none;
+    }
+}
+
+.gamfi-header-section .mobile-navbar-menu ul ul li,
+.gamfi-header-section .mobile-navbar-menu li:hover > ul > li {
+    height: auto;
+}
+
+.nav-expanded nav {
+    right: 0 !important;
+}
+
+.progress-inner {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    .progress,
+    .progress-bar{
+        background-color: rgba(255, 255, 255, 0);
+        background-size: 14px 32px;
+        background-image: linear-gradient(60deg, rgba(255, 255, 255, 0.15) 26%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 54%, rgba(255, 255, 255, 0.15) 82%, transparent 75%, transparent);
+        height: 12px;
+    }
+    .progress {
+        border-radius: 0;
+    }
+    .progress-bar {
+        background-image: linear-gradient(60deg, #a3ff12 26%, transparent 25%, transparent 50%, #a3ff12 54%, #a3ff12 82%, transparent 75%, transparent);
+    }
+}
+
+.canvas-menu ul{
+    li {
+        display: block;
+        + li {
+            padding-top: 15px;
+        }
+    }
+    li a {
+        display: block;
+        color: $white;
+        font-weight: 600;
+        &:hover{
+            color: #636363;
+        }
+    }
+}
+
+/*--- Mega Menu ---*/
+.gamfi_mega_menu {
+    background: rgba(19, 20, 44, 0.98);
+    backdrop-filter: blur(4px);
+    padding-top: 0px;
+    min-height: 600px;
+    position: relative;
+    width: 100%;
+    z-index: 111;
+    border-top: 3px solid rgba(255, 255, 255, 0.08);
+    display: block;
+}
+
+.mega_menu_content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.home_menu_list_headings{
+    position: relative;
+    height: 33px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 0px;
+    }
+}
+
+.mega_menu_left_sect .mega_menu_left_bg_sect{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(4px);
+    z-index: 0;
+    min-height: 600px;
+}
+
+.mega_menu_left_bg{
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.mega_menu_left_bg_color{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    height: 100%;
+    width: 32%;
+    z-index: 1;
+}
+
+.home_menu_list{
+    position: relative;
+    z-index: 11;
+    height: 600px;
+}
+
+.home_menu_list ul{
+    margin-top: 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    top: 0% !important;
+    li{
+        margin-left: 0px !important;
+        width: auto !important;
+        border: none !important;
+        padding-bottom: 20px !important;
+        height: auto !important;
+    }
+    li a {
+        display: flex !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        font-family: $russoOneFont !important;
+        font-style: normal;
+        font-weight: 400 !important;
+        font-size: 16px !important;
+        line-height: 19px !important;
+        text-transform: uppercase !important;
+        color: rgba($color: $white, $alpha: 0.7) !important;
+        background: transparent !important;
+        padding: 0px !important;
+        border: none !important;
+        span{
+            margin-left: 6px;
+        }
+        span img{
+            margin-right: 0px;
+        }
+    }
+}
+
+.mega_menu_left_sect{
+    padding-right: 30px;
+    height: 600px;
+    padding-top: 36px;
+}
+
+.home_menu_right_sect{
+    padding-left: 45px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 880px;
+    width: 100%;
+    position: relative;
+    z-index: 11111;
+    padding-top: 36px;
+    height: 600px;
+    background: rgba(19, 20, 44, 0.98);
+    backdrop-filter: blur(4px); 
+}
+
+.menu_headings{
+    position: relative;
+    height: 33px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 0px;
+    }
+}
+
+.menu_column ul{
+    margin-top: 8px;
+    margin-bottom: 28px;
+    li span {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: $white;
+        padding: 0px 4px;
+        border-radius: 23px;
+        margin-left: 10px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &.new{
+            background: $themeColorBlue;
+            backdrop-filter: blur(5px);
+        }
+        &.soon{
+            color: rgba($color: $white, $alpha: 0.7);
+            background: rgba($color: $white, $alpha: 0.1);
+            backdrop-filter: blur(5px);
+        }
+        &.hot{
+            background: $bgColor4;
+            backdrop-filter: blur(5px);
+        }
+    }
+    li a {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 36px;
+        color: rgba($color: $white, $alpha: 0.7);
+        &:hover{
+            color: $white !important;
+        }
+    }
+}
+
+.gamfi-header-section .heaader-inner-area ul{
+    li.mega_menu_hov{
+        position: inherit;
+    }
+    li .gamfi_mega_menu ul{
+        position: inherit;
+    }
+    li .gamfi_mega_menu ul{
+        opacity: 1;
+        visibility: visible;
+        transform: scaleY(1);
+    }
+    li .menu_column ul li a  {
+        display: block;
+        background: none;
+        padding: 0px;
+        transition: 0.4s;
+    }
+    li .menu_column ul li{
+        border: none;
+        margin: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        
+    }
+} 
+
+.gamfi-header-section .header-menu ul{
+    li .menu_column ul{
+        display: block !important;
+    }
+    li .menu_column ul li a {
+    
+        display: block;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 36px;
+        color: rgba($color: $white, $alpha: 0.7);
+        padding: 0px;
+    }
+} 
+
+.gamfi_mega_menu_sect{
+    padding-top: 40px;
+    position: absolute;
+    height: 100%;
+    left: 0px;
+    width: 100%;
+    top: 42px;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+    transform: scaleY(0);
+    transform-origin: 0 0 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.mega_menu_hov{
+    &:hover {
+        .gamfi_mega_menu_sect {
+
+            opacity: 1;
+            visibility: visible;
+            transform: scaleY(1);
+        }
+    }
+}
+
+
+
+.v2_MenuLogoArea{
+    max-width: 980px;
+    width: 100%;
+    padding-right: 28px;
+}
+.v2_white_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gamfi-header-section .header-menu.header-menuV2 ul li ul.sub-menu li .sub-menu{
+    left: -100%;
+}
+.gamfi-header-section .header-menu.header-menuV2 ul li ul.sub-menu li.menu-item-has-children:before{
+    transform: rotate(90deg);
+}
+.gamfi-header-section .header-menu.header-menuV2 ul li ul.sub-menu li.menu-item-has-children:hover:before{
+    transform: rotate(180deg);
+}
