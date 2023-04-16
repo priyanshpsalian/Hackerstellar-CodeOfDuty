@@ -1,0 +1,374 @@
+/*--- Tier ---*/
+.gamfi_tier_sect{
+    background: $bgColor;
+    padding-top: 70px;
+    padding-bottom: 110px;
+    position: relative;
+    .container{
+        position: relative;
+        z-index: 1;
+    }
+    .tier_earth_img{
+        position: absolute;
+        left: 30%;
+        top: 246px;
+        z-index: 0;
+    }
+    .tier_galaxy_img1{
+        position: absolute;
+        left: 10%;
+        bottom: 241px;
+        z-index: 0;
+    }
+    .tier_galaxy_img2{
+        position: absolute;
+        right: 12%;
+        top: 259px;
+        z-index: 0;
+    }
+}
+
+.gamfi_tier_card{
+    max-width: 370px;
+    width: 100%;
+    background: rgba(30, 31, 53, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 45px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: auto;
+    margin-bottom: 30px;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 36px;
+        text-align: center;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    h3 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 36px;
+        text-align: center;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    span{
+        margin-bottom: 4px;
+        margin-top: 24px;
+    }
+    p {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-top: 21px;
+        margin-bottom: 0px;
+    }
+    h4 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+        margin-bottom: 0px;
+        color: $white;
+    }
+}
+
+
+/*--- TierV2 ---*/
+.tier_v2_col{
+    min-height: 734px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.tier_v2_col_headings{
+    h2 {
+        margin-top: 30px;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 36px;
+        line-height: 36px;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    h3 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 36px;
+        color: $white;
+        margin-bottom: 0px;
+    }
+}
+
+.tier_v2_col_body{
+    width: 100%;
+    padding: 0px 19px;
+    padding-right: 0px;
+    position: relative;
+}
+
+.tier_v2_col_body1{
+    &::after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 145px;
+        left: -150px;
+        height: 4px;
+        width: 295.5px;
+        background: #cb5a5e;
+        background: repeating-linear-gradient(-45deg, $white, $white 5px, transparent 0px, transparent 9px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-bottom: 0;
+        transform: rotate(90deg);
+    }
+}
+
+.tier_v2_col_body2{
+    &::after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 185px;
+        left: -190px;
+        height: 4px;
+        width: 376.5px;
+        background: #cb5a5e;
+        background: repeating-linear-gradient(-45deg, #E8C63C, #E8C63C 5px, transparent 0px, transparent 9px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-bottom: 0;
+        transform: rotate(90deg);
+    }
+}
+
+.tier_v2_col_body3{
+    &::after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 217px;
+        left: -217px;
+        height: 4px;
+        width: 430.5px;
+        background: #cb5a5e;
+        background: repeating-linear-gradient(-45deg, #5F3FDB, #5F3FDB 5px, transparent 0px, transparent 9px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-bottom: 0;
+        transform: rotate(90deg);
+    }
+}
+
+.tier_v2_col_body4{
+    &::after{
+        content: "";
+        position: absolute;
+        display: block;
+        top: 250px;
+        left: -245px;
+        height: 4px;
+        width: 485.5px;
+        background: #cb5a5e;
+        background: repeating-linear-gradient(-45deg, #FF3D6C, #FF3D6C 5px, transparent 0px, transparent 9px);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-bottom: 0;
+        transform: rotate(90deg);
+    }
+}
+
+.tier_v2_col_body ul{
+    li{
+        margin-bottom: 21px;
+    }
+    li h4 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        margin-bottom: 0px;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    li h5 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        color: $white;
+        margin-bottom: 0px;
+    }
+} 
+
+.tier_v2_col_body .bottom_shape {
+    height: 50px;
+    width: 100%;
+    background: rgba(30, 31, 53, 0.7);
+    backdrop-filter: blur(10px);
+    margin-bottom: 10px;
+}
+
+/*--- Tier V3 ---*/
+.gamfi_tier_v3_sect{
+    background: $bgColor;
+    padding-top: 70px;
+    padding-bottom: 140px;
+}
+
+.tvl_headings{
+    position: relative;
+    span{
+        position: absolute;
+        position: absolute;
+        top: -45px;
+        left: -48px;
+    }
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 45px;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    h3 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 28px;
+        line-height: 45px;
+        margin-bottom: 46px;
+        text-transform: uppercase;
+        color: $white;
+    }
+}
+
+.tvl_list ul{
+    li {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        margin-bottom: 50px;
+        color: $white;
+    }
+} 
+
+.tvl_right_sect{
+    position: relative;
+    .row{
+        z-index: 2;
+        position: relative;
+    }
+}
+
+.tvl_right_sect .tier_v3_galaxy_img{
+    position: absolute;
+    left: -135px;
+    bottom: 62px;
+    z-index: 0;
+}
+
+.tvl_right_card{
+    max-width: 200px;
+    width: 100%;
+    background: transparent;
+}
+
+.tvl_right_card_headings{
+    height: 184px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h3 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 36px;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 19px;
+        color: $white;
+    }
+}
+
+.tvl_right_card_headings1{
+    background: url("../images/bg/TvlBg1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+.tvl_right_card_headings2{
+    background: url("../images/bg/TvlBg2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+.tvl_right_card_headings3{
+    background: url("../images/bg/TvlBg3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+.tvl_right_card_headings4{
+    background: url("../images/bg/TvlBg4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+}
+
+.tvl_right_card_content ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    li{
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-bottom: 1px solid rgba($color: $white, $alpha: 0.1);
+        width: 100%;
+        background: rgba(30, 31, 53, 0.7);
+        backdrop-filter: blur(10px);
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: center;
+        color: $white;
+    }
+}

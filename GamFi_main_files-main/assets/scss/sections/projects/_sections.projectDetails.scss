@@ -1,0 +1,434 @@
+/*--- ProjectDetails2 ---*/
+.project_details2_section{
+    background: $bgColor;
+    padding-top: 100px;
+    padding-bottom: 140px;
+    position: relative;
+    .container{
+        z-index: 1;
+        position: relative;
+    }
+}
+
+.project_details2_bg{
+    position: absolute;
+    top: 0px;;
+    left: 0px;
+    z-index: 0;
+    img{
+        max-height: 845px;
+        width: 100%;
+    }
+}
+
+.first_survivor_city_left_section{
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    position: relative;
+    .chain_img{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+}
+
+.first_survivor_city_left_timer{
+    width: 345px;
+    height: 50px;
+    background: url("../images/project/shapeTimerBg.svg");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+}
+
+.first_survivor_city_left_timer .price-counter ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 232px;
+    margin: 0px 30px;
+    padding-top: 12px;
+    li {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        color: $white;
+    }
+    li span{
+        font-size: 15px;
+    }    
+}
+
+.first_survivor_city_left_section .total_rised_progress_sect {
+    margin-top: 120px;
+}
+
+
+.first_survivor_city_right_section{
+    padding: 30px 0px 30px 19px; 
+}
+
+.first_survivor_city_right_project_name{
+    margin-left: 29px;
+    h2{
+        margin-bottom: 21px;
+    }
+    h2 a {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+        text-transform: capitalize;
+        color: $white;
+    }
+    span {
+        margin-bottom: 0px;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+}
+
+.first_survivor_city_right_headings{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.first_survivor_city_right_section{
+    p {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-top: 35px;
+        margin-bottom: 40px;
+    }
+} 
+
+.first_survivor_city_right_button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.pool_and_token_info_sect{
+    margin-top: 70px;
+}
+
+.pool_and_token_info_card{
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    padding: 43px 29px;
+    padding-bottom: 25px;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 27px;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    h2 span{
+        margin-left: 8px;
+        img{
+            width: 100px;
+            height: 15px;
+        }
+    }
+}
+
+.pool_and_token_info_list{
+    margin-top: 16px;
+}
+.pool_and_token_info_list ul{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    li p{
+        margin-bottom: 0px;
+    }
+    li p.pool_and_token_info_list_left {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    li p.pool_and_token_info_list_right{
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        color: $white;
+    }
+    li p.pool_and_token_info_list_right span{
+        margin-right: 29px;
+    }
+}
+
+
+.project_details2_schedule_table_sect{
+    margin-top: 53px;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 50px;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 12px;
+    }
+    h2 span{
+        margin-left: 10px;
+    }
+    h2 span img{
+        height: 15px;
+        width: 100px;
+    }
+}
+
+.project_details2_schedule_table_headings{
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+    width: 100%;
+}
+
+.project_details2_schedule_table_headings ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0px 29px;
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    li.column_1{
+        width: 30%;
+    }
+    li.column_2{
+        width: 30%
+    }
+    li.column_3{
+        width: 30%;
+    }
+    li.column_4{
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+.project_details2_schedule_table_body{
+    background: transparent;
+    width: 100%;
+}
+.project_details2_schedule_table_body ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    border-bottom: 1px solid rgba($color: $white, $alpha: 0.1);
+    padding: 0px 29px;
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    li span{
+        margin-right: 13px;
+    }
+    li.column_1{
+        width: 30%;
+    }
+    li.column_2{
+        width: 30%
+    }
+    li.column_3{
+        width: 30%;
+    }
+    li.column_4{
+        width: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+
+
+
+
+
+.project_details2_allocations_table_sect{
+    margin-top: 53px;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 50px;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 12px;
+    }
+    h2 span{
+        margin-left: 10px;
+    }
+    h2 span img{
+        height: 15px;
+        width: 100px;
+    }
+}
+
+.project_details2_allocations_table_headings{
+    height: 60px;
+    background: rgba(255, 255, 255, 0.08);
+}
+.project_details2_allocations_table_headings ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0px 29px;
+    padding-right: 0px;
+    li {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    li.column_1{
+        width: 12%;
+    }
+    li.column_2{
+        width: 25%;
+    }
+    li.column_3{
+        width: 25%;
+    }
+    li.column_4{
+        width: 25%;
+    }
+    li.column_5{
+        width: 13%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-right: 29px;
+    }
+}
+
+
+
+.project_details2_allocations_table_body{
+    background: transparent
+}
+.project_details2_allocations_table_body ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 63px;
+    padding: 0px 29px;
+    padding-right: 0px;
+    border-bottom: 1px solid rgba($color: $white, $alpha: 0.1);
+    li {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    li.column_1{
+        width: 12%;
+    }
+    li.column_2{
+        width: 25%;
+    }
+    li.column_3{
+        width: 25%;
+    }
+    li.column_3 span{
+        margin-right: 12px;
+    }
+    li.column_4{
+        width: 25%;
+    }
+    li.column_5{
+        width: 13%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    li.column_5 button {
+        outline: none;
+        height: 40px;
+        width: 120px;
+        background: rgba($color: $white, $alpha: 0.1);
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+    }
+}
