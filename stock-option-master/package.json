@@ -1,0 +1,14 @@
+{
+  "dependencies": {},
+  "description": "Stock exchange simulator",
+  "happyFunTimes": {
+    "apiVersion": "1.13.0",
+    "category": "game",
+    "gameId": "stock",
+    "gameType": "html",
+    "minPlayers": 2
+  },
+  "name": "Stock Option",
+  "private": false,
+  "version": "0.0.3"
+}
