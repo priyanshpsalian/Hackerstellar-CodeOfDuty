@@ -7,7 +7,6 @@ const {
 } = require("whatsapp-web.js");
 const request = require("request");
 const axios = require("axios");
-
 // const client = new Client();
 const qrcode = require("qrcode-terminal");
 // Path where the session data will be stored
@@ -406,19 +405,41 @@ client.on("message",async(message) => {
     // -----------------------------------------------------------
 
     var data = message.body.replace("risk ", "");
-    const scores = {
-      AAPL: {
-        "Controversy Score": "C",
-        "Environment Score": "A",
-        "Governance Score": "C",
-        "Social Score": "C",
-        "Total ESG Score": "B",
+    // const scores = {
+    //   AAPL: {
+    //     "Controversy Score": "C",
+    //     "Environment Score": "A",
+    //     "Governance Score": "C",
+    //     "Social Score": "C",
+    //     "Total ESG Score": "B",
+    //   },
+    // };
+    // ---------------------------------------
+    const options = {
+      method: "GET",
+      url: "https://esg-risk-ratings-for-stocks.p.rapidapi.com/api/v1/resources/esg",
+      params: { ticker: `${data}` },
+      headers: {
+        "X-RapidAPI-Key": "27a69cf21amsh325a8ba16cf714bp155393jsn0ee108a31352",
+        "X-RapidAPI-Host": "esg-risk-ratings-for-stocks.p.rapidapi.com",
       },
     };
-
+    var scores;
+    await axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        scores = response.data;
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    console.log(scores, "scores");
+    // ----------------------------------------------------------
     var text = `Hi there! Here are the risk scores for ${data} are:\n\n`;
-    for (const [key, value] of Object.entries(scores.AAPL)) {
+    for (const [key, value] of Object.entries(scores[`${data}`])) {
       text += `${key}: ${value}\n`;
+      console.log(text, "text");
     }
     message.reply(text);
   } else if (message.body.startsWith("view ")) {
@@ -426,53 +447,45 @@ client.on("message",async(message) => {
 
     // --------------------------------------------------------
 
-    // const options = {
-    //   method: "GET",
-    //   url: "https://alpha-vantage.p.rapidapi.com/query",
-    //   qs: { function: "GLOBAL_QUOTE", symbol: "MSFT", datatype: "json" },
-    //   headers: {
-    //     "X-RapidAPI-Key": "27a69cf21amsh325a8ba16cf714bp155393jsn0ee108a31352",
-    //     "X-RapidAPI-Host": "alpha-vantage.p.rapidapi.com",
-    //     useQueryString: true,
-    //   },
-    // };
-    // var scores;
-    // request(options, function (error, response, body) {
-    //   if (error) {
-    //     // Handle the error
-    //     console.error(error);
-    //     return;
-    //   }
+    const axios = require("axios");
 
-    //   // Check if the response status code is not in the 200 range
-    //   if (response.statusCode < 200 || response.statusCode >= 300) {
-    //     console.error(
-    //       `Failed to retrieve data. Status code: ${response.statusCode}`
-    //     );
-    //     return;
-    //   }
-
-    //   console.log(body);
-    //   scores = body;
-    // });
-    // -----------------------------------------------------------
-
-    const scores = {
-      "Global Quote": {
-        "01. symbol": "MSFT",
-        "02. open": "287.0000",
-        "03. high": "288.4800",
-        "04. low": "283.6900",
-        "05. price": "286.1400",
-        "06. volume": "20987917",
-        "07. latest trading day": "2023-04-14",
-        "08. previous close": "289.8400",
-        "09. change": "-3.7000",
-        "10. change percent": "-1.2766%",
+    const options = {
+      method: "GET",
+      url: "https://alpha-vantage.p.rapidapi.com/query",
+      params: { function: "GLOBAL_QUOTE", symbol: data, datatype: "json" },
+      headers: {
+        "X-RapidAPI-Key": "27a69cf21amsh325a8ba16cf714bp155393jsn0ee108a31352",
+        "X-RapidAPI-Host": "alpha-vantage.p.rapidapi.com",
       },
     };
+    var scores;
+    await axios
+      .request(options)
+      .then(function (response) {
+        console.log(response.data);
+        scores = response.data;
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+    // -----------------------------------------------------------
 
-    var text = `Here's the latest stock quote data for MSFT:\n\n`;
+    // const scores = {
+    //   "Global Quote": {
+    //     "01. symbol": "MSFT",
+    //     "02. open": "287.0000",
+    //     "03. high": "288.4800",
+    //     "04. low": "283.6900",
+    //     "05. price": "286.1400",
+    //     "06. volume": "20987917",
+    //     "07. latest trading day": "2023-04-14",
+    //     "08. previous close": "289.8400",
+    //     "09. change": "-3.7000",
+    //     "10. change percent": "-1.2766%",
+    //   },
+    // };
+
+    var text = `Here's the latest stock quote data for ${data}:\n\n`;
     for (const [key, value] of Object.entries(scores["Global Quote"])) {
       text += `${key}: ${value}\n`;
     }
@@ -492,15 +505,54 @@ client.on("message",async(message) => {
       "W",
     ];
     console.log("openAI");
-    axios
-      .get("http://127.0.0.1:5001/watsapp-algo-trading/us-central1/helloWorld")
-      .then((response) =>{
-        var text = "Here's the list of stock tickers: " + data.join(", ");
-        message.reply(text);
-
-      } )
-      .catch((error) => console.error(error));
+    try {
+      axios
+        .get(
+          "http://127.0.0.1:5001/watsapp-algo-trading/us-central1/helloWorld"
+        )
+        .then((response) => {
+          var text = "Here's the list of stock tickers: " + data.join(", ");
+          message.reply(text);
+        })
+        .catch((error) => console.error(error));
+      
+    } catch (e) {
+      console.log(e);
+      
+    }
     
+  } else if (message.body.startsWith("buy ")) {
+    var data = message.body.replace("buy ", "");
+    try {
+      const account = await alpaca.getAccount();
+      console.log(`dry powder: ${account.buying_power}`);
+      console.log("account init done");
+      // place order
+      const order = await alpaca.createOrder({
+        // symbol: stocksToBuy[0],
+        symbol: data,
+        qty: 1,
+        // notional: account.buying_power * 0.9, // will buy fractional shares
+        side: "buy",
+        type: "market",
+        time_in_force: "day",
+      });
+
+      console.log(`look mom i bought stonks: ${order.id}`);
+    } catch (e) {
+      console.log(e, "error");
+    }
+    message.reply("Order Placed");
+  } else if (message.body==="analysis") {
+    const pdf = fs.readFileSync("file.pdf");
+    // send the PDF file as an attachment
+    // const media = MessageMedia.fromFilePath("file.pdf");
+    // message.sendMessage(media);
+    // const media = await MessageMedia.fromUrl(
+    //   "https://via.placeholder.com/350x150.png"
+    // );
+    message.reply("https://via.placeholder.com/350x150.png");
+ 
   }
 });
 client.on("ready", () => {
