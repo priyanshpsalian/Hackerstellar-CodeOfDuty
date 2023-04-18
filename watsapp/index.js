@@ -18,15 +18,15 @@ const SESSION_FILE_PATH = "./session.json";
 // console.log(media,"media");
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-  organization: "org-FePBbKs7Fw8eiYd79riEu7Fz", // REPLACE with your API credentials
-  apiKey: "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", // REPLACE with your API credentials
+  organization: process.env.OPENAI_ORGANIZATION_KEY, // REPLACE with your API credentials
+  apiKey: process.env.OPENAI_API_KEY, // REPLACE with your API credentials
 });
 const openai = new OpenAIApi(configuration);
 
 const Alpaca = require("@alpacahq/alpaca-trade-api");
 const alpaca = new Alpaca({
-  keyId: "26669da693b8c5dc3a5be2476ad313f0", // REPLACE with your API credentials
-  secretKey: "8ac1f3af800e9c7c965d286ec1a81685d78b9813", // REPLACE with your API credentials
+  keyId: process.env.ALPAKA_KEY_ID, // REPLACE with your API credentials
+  secretKey: process.env.ALPAKA_SECRECT_KEY, // REPLACE with your API credentials
   // paper: true,
 });
 // Load the session data if it has been previously saved
