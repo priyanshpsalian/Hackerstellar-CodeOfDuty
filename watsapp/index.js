@@ -109,7 +109,7 @@ client.on("message",async(message) => {
     // client.sendMessage(message.from, `${media}`);
   } else if (message.body === "Hi") {
     message.reply(
-      "Hi there! Here are some commands that you can use : \n\n- news-get the latest news\n- risk AAPL-view the risk analysis\n- view AAPL-view the risk price and quota\n- top stocks-view top stocks\n- buy 4 AAPL-buy stocks in one click\n- analysis-get my performance report"
+      "Hi there! Here are some commands that you can use : \n\n- news-get the latest news\n- risk AAPL-view the risk analysis\n- view AAPL-view the risk price and quota\n- top stocks-view top stocks\n- buy 4 AAPL-buy stocks in one click\n- analysis-get my performance report\n- algo trading start-start the algorithmic trading"
     );
   } else if (message.body === "Good morning") {
     message.reply(
@@ -513,7 +513,7 @@ client.on("message",async(message) => {
           "http://127.0.0.1:5001/watsapp-algo-trading/us-central1/helloWorld"
         )
         .then((response) => {
-          var text = "Here's the list of stock tickers: " + data.join(", ");
+          var text = "Here's the list of stock: " + response.data.join(", ");
           message.reply(text);
         })
         .catch((error) => console.error(error));
@@ -570,7 +570,79 @@ client.on("message",async(message) => {
     var text =
       "Stocks alert: The price of ABBVIE INC. stock has exceeded $100! having symbol ABBV";
     client.sendMessage(chatId, text);
-    
+  } else if (message.body === "algo trading start") {
+    try {
+      message.reply("Started");
+      functions
+        .runWith({ memory: "4GB" })
+        .pubsub.schedule("0 10 * * 1-5")
+        .timeZone("America/New_York")
+        .onRun(async (ctx) => {
+          console.log("This will run M-F at 10:00 AM Eastern!");
+
+          const tweets = await scrape();
+
+          const gptCompletion = await openai.createCompletion(
+            "text-davinci-001",
+            {
+              prompt: `${tweets} Jim Cramer recommends selling the following stock tickers: `,
+              temperature: 0.7,
+              max_tokens: 32,
+              top_p: 1,
+              frequency_penalty: 0,
+              presence_penalty: 0,
+            }
+          );
+
+          const stocksToBuy =
+            gptCompletion.data.choices[0].text.match(/\b[A-Z]+\b/g);
+          console.log(`Thanks for the tips Jim! ${stocksToBuy}`);
+
+          if (!stocksToBuy) {
+            console.log("sitting this one out");
+            return null;
+          }
+
+          //// ALPACA Make Trades ////
+
+          // close all positions
+          const cancel = await alpaca.cancelAllOrders();
+          const liquidate = await alpaca.closeAllPositions();
+
+          // get account
+          const account = await alpaca.getAccount();
+          console.log(`dry powder: ${account.buying_power}`);
+
+          // place order
+          const order = await alpaca.createOrder({
+            symbol: stocksToBuy[0],
+            // qty: 1,
+            notional: account.buying_power * 0.9, // will buy fractional shares
+            side: "buy",
+            type: "market",
+            time_in_force: "day",
+          });
+
+          console.log(`look i bought stonks: ${order.id}`);
+
+          return null;
+        });
+      
+    } catch (e) {
+      console.log(e);
+    }
+    // message.reply(text);
+  } else if (message.body === "algo trading stop") {
+    // const pdf = fs.readFileSync("file.pdf");
+    // send the PDF file as an attachment
+    // const media = MessageMedia.fromFilePath("file.pdf");
+    // message.sendMessage(media);
+    // const media = await MessageMedia.fromUrl(
+    //   "https://via.placeholder.com/350x150.png"
+    // );
+    message.reply(
+      "Stop"
+    );
   }
 });
 client.on("ready", () => {
