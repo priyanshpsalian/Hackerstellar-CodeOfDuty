@@ -1,0 +1,37 @@
+/*--- Gamfi Banner Section CSS ---*/
+.sc-banner {
+    position: relative;
+    z-index: 9;
+    overflow: hidden;
+    padding: 170px 0 225px;
+    background: url("../images/bg/banner-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    .video-iconarea {
+        position: relative;
+    }
+    .banner-content {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+.banner-content{
+    .banner-icon {
+        margin: 0 0 24px;
+    }
+    .banner-title {
+        margin: 0 0 20px;
+    }
+    .sub-title {
+        font-weight: 300;
+        line-height: 1.3;
+    }
+    .description {
+        color: $white;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0 0 40px;
+    }
+} 

@@ -1,0 +1,60 @@
+/*--- Gamfi Partner Section CSS ---*/
+.gamfi-partner-section {
+    background: #0a0b1a;
+    img{
+        transition: 0.4s;
+        &:hover{
+            opacity: 0.7;
+        }
+    }
+}
+
+.partner-item {
+    .partner-image {
+        padding-right: 70px;
+    }
+}
+
+.gamfi-partner-section .gamfi-partner-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    overflow: hidden;
+    &::after,
+    &::before{
+        content: "";
+        display: block;
+        width: 50px;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        background: linear-gradient(to right, #0a0b1a, rgba(10, 10, 26, 0));
+        z-index: 1;
+    }
+    &::before{
+        left: 0;
+    }
+    &::after{
+        right: 0;
+        transform: rotateZ(180deg);
+    }
+    .partner-image {
+        flex-shrink: 0;
+        animation: loop_animate 20s linear 0s infinite normal none running;
+        a{
+            margin: 0px 35px;
+        }
+    }
+}
+
+@keyframes loop_animate {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

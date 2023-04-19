@@ -1,0 +1,637 @@
+/*--- Staking V3 ---*/
+.staking_bradcome_right{
+    max-width: 554px;
+    width: 100%;
+    margin-left: auto;
+}
+
+.staking_bradcome_right ul{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    li h6 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 158%;
+        margin-bottom: 0px;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 24px;
+    }
+    li h5 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 158%;
+        margin-bottom: 0px;
+        color: $white;
+    }
+}
+
+.staking_flip_card_sect {
+    background: $bgColor;
+    padding-bottom: 110px;
+}
+
+.staking_flip_card {
+    background-color: transparent;
+    width: 100%;
+    min-height: 580px;
+    height: 100%;
+    perspective: 1000px;
+}
+
+.staking_flip_card_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.staking_flip_card.active .staking_flip_card_inner {
+    transform: rotateY(180deg);
+}
+
+.staking_flip_card_front,
+.staking_flip_card_back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;    
+}
+
+.staking_flip_card_front {
+    background: rgba(30, 31, 53, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 40px;
+}
+
+.staking_flip_card_back {
+    background: rgba(30, 31, 53, 0.7);
+    backdrop-filter: blur(5px);
+    transform: rotateY(180deg);
+}
+
+.staking_flip_card_front_headings{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 34px;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: right;
+        color: $white;
+        margin-bottom: 0px;
+    }
+}
+
+.staking_flip_card_front_body{
+    position: relative;   
+}
+
+.staking_flip_card_front_timebg{
+    height: 35px;
+    width: 196px;
+    background: url("../images/bg/shape-bg.png");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+    position: absolute;
+    left: -40px;
+    top: 0px;
+    span {
+        margin-bottom: 0px;
+        display: flex;
+        align-items: center;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: uppercase;
+        color: $white;
+        &::before{
+            content: url("../images/icons/clock.svg");
+            margin-right: 11px;
+            margin-top: 4px;
+        }
+    }
+}
+
+.staking_apy h3 {
+    font-family: $russoOneFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: right;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+    color: #33EFB0;
+    margin-bottom: 0px;
+    padding-top: 10px;
+}
+
+.staking_flip_card_front_list{
+    margin-top: 41px;
+    margin-bottom: 20px;
+}
+
+.staking_flip_card_front_list ul{
+    li{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 21px;
+    }
+    li span {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 30px;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    li strong {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        text-align: right;
+        color: $white;
+    }
+}
+
+.staking_flip_card_front_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+        border: none;
+        outline: none;
+        width: 46.5%;
+        height: 40px;
+        background: rgba($color: $white, $alpha: 0.2);
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        &.btn_purple{
+            background: $themeColorBlue;
+        }
+    }
+}
+
+.staking_flip_card_front_reward{
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    h6 {
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 30px;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 0px;
+    }
+    h5 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+        margin-bottom: 0px;
+        color: $white;
+    }
+}
+
+.staking_flip_card_back_content{
+    padding: 40px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.staking_flip_card_back_overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: url("../images/bg/staking_flip_card_blur_img.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 0;
+}
+
+.staking_flip_card_back_headings{
+    position: relative;
+    text-align: left;
+    margin-bottom: 7px;
+    z-index: 1;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 36px;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    button.staking_flip_card_close_btn{
+        background: transparent;
+        border: none;
+        outline: none;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+    }
+}
+
+.staking_flip_card_back_body{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.staking_flip_card_back_form{
+    text-align: left;
+    margin-top: 47px;
+    form span {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+        text-align: left;
+    }
+}
+
+.staking_flip_card_back_form_input {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    height: 60px;
+    max-width: 290px;
+    width: 100%;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    input {
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        max-width: 215px;
+        border: none;
+        outline: none;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: $white;
+    }
+    button {
+        width: 60px;
+        height: 30px;
+        background: rgba($color: $white, $alpha: 0.2);
+        border: none;
+        outline: none;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+    }
+}
+
+.staking_flip_card_back_approve_btn{
+    position: relative;
+    width: 100%;
+    padding-bottom: 40px;
+    button {
+        width: 100%;
+        height: 40px;
+        background: $themeColorBlue;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+    }
+}
+
+
+
+/*--- lp ---*/
+.lq_flip_card {
+    background-color: transparent;
+    width: 100%;
+    min-height: 560px;
+    height: 100%;
+    perspective: 1000px;
+}
+.staking_lq_bradcome_right ul{
+    justify-content: flex-end;
+    li{
+        text-align: right;
+    }
+}
+
+.lq_flip_card_headings{
+    background: rgba($color: $white, $alpha: 0.1);
+    backdrop-filter: blur(5px);
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 40px;
+    position: relative;
+    h2 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+        color: $white;
+        margin-bottom: 0px;
+        span {
+            margin-right: 11px;
+        }
+    }
+    h3 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: right;
+        text-transform: uppercase;
+        color: #33EFB0;
+        margin-bottom: 0px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.staking_header_shape{
+    position: absolute;
+    right: 28px;
+    z-index: 0;
+}
+
+.lq_flip_card_body{
+    padding: 42px 40px;
+    padding-top: 0px;
+}
+
+.lq_flip_card_front_buttons{
+    padding-top: 22px;
+}
+
+.lq_flip_front_card_bottom{
+    margin-top: 28px;
+}
+.lq_flip_front_card_bottom ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 264px;
+    width: 100%;
+    li  button{
+        padding: 0px;
+        font-family: $interFont;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba($color: $white, $alpha: 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: transparent;
+        border: none;
+        outline: none;
+        &:after{
+            content: url("../images/icons/copy_icon_gray.svg");
+            margin-left: 7px;
+            margin-top: 3px;
+        }
+    }
+}
+
+.lq_fleep_back_body{
+    position: relative;
+    padding: 40px;
+}
+
+.lp_flip_card_body_headings h2{
+    text-transform: capitalize;
+}
+
+.staking_flip_card_back_headings.lp_flip_card_body_headings button.staking_flip_card_close_btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.lp_flip_card_front_list{
+    margin-top: 30px;
+}
+
+.lp_flip_card_back_approve_btn{
+    padding-bottom: 0px;
+    padding-top: 67px;
+}
+
+.lq_flip_card_back_overlay{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    left: 0px;
+    background: url("../images/bg/lq_fleep_card_blur_img.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.lq_flip_card_back_form{
+    margin-top: 37px;
+}
+
+
+/*--- Staking_4 ---*/
+.staking4_time_counter{
+    margin-bottom: 67px;
+    max-width: 379px;
+    margin-right: auto;
+    margin-top: 22px;
+}
+.staking4_time_counter .timer ul{
+    li {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 26px;
+        color: $white;
+    }
+    li span {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: $white;
+    }
+} 
+
+.project-form-list {
+    h4 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 12px;
+    }
+    h6 {
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba($color: $white, $alpha: 0.7);
+        span {
+            color: $white;
+        }
+        a{
+            text-transform: uppercase;
+            color: $themeColorBlue;
+            margin-left: 15px;
+        }
+    }
+}
+
+.project-value-image{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    button {
+        background: rgba($color: $white, $alpha: 0.2);
+        height: 60px;
+        width: 156px;
+        font-family: $russoOneFont;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        border: none;
+        outline: none;
+    }
+}
+
+.project-value h6{
+    color: rgba($color: $white, $alpha: 0.7);
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0px;
+    padding-top: 3.5px;
+}
+
+.staking4_table_sect{
+    background: $bgColor;
+}
+
+.table_col1{
+    width: 8%;
+}
+
+.table_col2{
+    width: 25%;
+}
+
+.table_col3{
+    width: 25%;
+}
+
+.table_col4{
+    width: 14%;
+}
+
+.table_col5{
+    width: 14%;
+}
+
+.table_col6{
+    width: 14%;
+    text-align: right;
+    justify-content: flex-end !important;
+}
+
+.table_col6 button {
+    background: rgba($color: $white, $alpha: 0.1);
+    height: 40px;
+    width: 120px;
+    padding: 0px;
+    font-family: $russoOneFont;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $white;
+}

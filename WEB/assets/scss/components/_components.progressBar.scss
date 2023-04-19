@@ -1,0 +1,61 @@
+/*--- Progress bar style ---*/
+.progress-line {
+	border-radius: 0px;
+	position: relative;
+	height: 8px;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.1);
+	.progress-done{
+		border-radius: 0px;
+		height: 100%;
+		width: 0%;
+		opacity: 0;
+		background-color: red;
+		transition: 0.3s;
+		&.bg-theme{
+			background-color: $themeColor
+		}
+		&.bg-green{
+			background-color: #33EFB0;
+		}
+		&.bg-red{
+			background-color: rgba(243, 19, 19, 0.4);
+		}
+		&.bg-gray{
+			background-color: rgba(255, 255, 255, 0.3);
+		}
+	}
+}
+
+
+.project_clasic_slider_progress_sect{
+	.progress{
+		width: 150px;
+		height: auto;
+		--bs-progress-bg: transparent;
+		svg{
+			width: 150px;
+			height: 150px;
+		}
+	}
+}
+
+
+.circle-progress-value {
+	stroke-width: 6px;
+	stroke: $themeColor;
+}
+.circle-progress-circle {
+	stroke-width: 6px;
+	stroke: #534A7C;
+}
+.circle-progress-text {
+	fill: $white;
+	font-family: $russoOneFont;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 30px;
+}
+.circle-progress-text-max{
+	display: none;
+}

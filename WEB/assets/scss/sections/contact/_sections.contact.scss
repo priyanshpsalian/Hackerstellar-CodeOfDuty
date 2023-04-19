@@ -1,0 +1,123 @@
+.get_in_touch_form form{
+    width: 100%;
+    max-width: 571px;
+    margin-top: 20px;
+    .input_name_sect{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .input_name_sect .first_name_field{
+        width: 48%;
+    }
+    .input_name_sect .last_name_field{
+        width: 48%;
+    }
+}
+
+.get_in_touch_form form {
+    span {
+        font-family: Russo One;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.7);
+    }
+    input {
+        height: 60px;
+        width: 100%;
+        padding: 8px 21px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        box-sizing: border-box;
+        background: Transparent;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 23px;
+    }
+    textarea {
+        height: 130px;
+        width: 100%;
+        padding: 8px 21px;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        box-sizing: border-box;
+        background: Transparent;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 40px;
+        resize: none;
+    }
+}
+
+.get_in_touch_contact_sect{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    max-width: 363px;
+    width: 100%;
+    margin-left: auto;
+    padding-left: 30px;
+}
+
+.get_in_touch_contact_content{
+    text-align: left;
+    h2 {
+        font-family: Russo One;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 40px;
+        text-transform: uppercase;
+        color: $white;
+    }
+    
+}
+
+.contact_info_content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.contact_info_content .contact_info_symbol{
+    margin-top: 9px;
+    margin-left: 22px;
+    h5 {
+        font-family: Russo One;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 45px;
+        text-transform: uppercase;
+        color: $white;
+        margin-bottom: 0px;
+    }
+    h6 {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 28px;
+        color: rgba($color: $white, $alpha: 0.7);
+        margin-bottom: 0px;
+    }
+    a {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 45px;
+        color: $themeColorBlue;
+    }
+}

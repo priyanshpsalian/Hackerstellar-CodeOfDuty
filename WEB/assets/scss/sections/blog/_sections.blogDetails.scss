@@ -1,0 +1,75 @@
+/* --- Gamfi Latest-details-content Section CSS ---*/
+.latest-details-content{
+    padding-top: 70px;
+    padding-bottom: 140px;
+    background: $bgColor;
+    .latest-content{
+        padding-right: 30px;
+    }
+}
+
+.latest-item{
+    margin-bottom: 30px;
+    img{
+        width: 100%;
+        max-height: 450px;
+    }
+    .sub-inner{
+        margin-bottom: 10px;
+        display: block;
+        span{
+            position: relative;
+            padding-right: 10px;
+            
+        }
+        a {
+            font-family: $russoOneFont;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 30px;
+            color: rgba($color: $white, $alpha: 0.7);
+        }
+    }
+}
+
+.latest-item .latest-text{
+    background: $bgColor5;
+    padding: 32px 30px;
+    .sec-heading p{
+        padding-top: 15px;
+    }
+}
+
+.latest-item .latest-btn a{
+    position: relative;
+    padding-left: 30px;
+    transition: 0.4s;
+    text-transform: uppercase;
+    font-family: $russoOneFont;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    color: rgba($color: $white, $alpha: 0.7);
+    &::before{
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 3px;
+        background: #BABBC1;
+        top: 7px;
+        left: 0;
+    }
+    &:hover{
+        color: $white;
+    }
+}
+
+.latest-item{
+    h4.title{
+        font-size: 30px;
+        a{
+            color: $white;
+        }
+    }
+}
