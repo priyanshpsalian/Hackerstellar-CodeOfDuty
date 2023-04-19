@@ -72,9 +72,9 @@ WATSAPP BOT
 
 The following people have contributed to this project:
 
-- 🚀 Prasad Ranjane
-- 🌍 Rohit  
-- 🤖 Krish Shah
+- 🚀 [Prasad Ranjane](https://github.com/prasaddd77)
+- 🤖 [Rohit Nehara](https://github.com/Rohitnehara)
+- 🌍  [Krish Shah](https://github.com/krishcshah)
 
 ## 📄 License
 
